@@ -187,7 +187,15 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
 /* Под fixed-навигацию резервируем высоту = высота навбара + safe-area-top.
    Без этого первый экран контента уехал бы под навбар. */
 .main { padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); }
-.tab { display: none; min-height: calc(100vh - var(--nav-h)); }
+.tab {
+  display: none;
+  min-height: calc(100vh - var(--nav-h));
+  overflow-x: clip;       /* добавить */
+  max-width: 100%;        /* добавить */
+}
+@supports not (overflow-x: clip) {
+  .tab { overflow-x: hidden; }
+}
 .tab.is-active { display: block; animation: fadeIn 0.5s ease; }
 
 @keyframes fadeIn {
@@ -220,7 +228,7 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
 .hero__title {
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: clamp(3.2rem, 12vw, 11rem);
+  font-size: clamp(2.2rem, 12vw, 11rem);   /* было 3.2rem */
   line-height: 0.92;
   letter-spacing: -0.03em;
   margin: 0;
