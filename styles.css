@@ -181,6 +181,11 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
   .tab-btn__en { display: none; }
 }
 
+@media (max-width: 360px) {
+  .tab-btn__index { display: none; }
+  .tab-btn { gap: 0; }
+}
+
 /* =========================================================
    TABS: переключение
    ========================================================= */
@@ -189,9 +194,13 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
 .main { padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px)); }
 .tab {
   display: none;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
   overflow-x: clip;       /* добавить */
   max-width: 100%;        /* добавить */
+}
+/* Фолбэк для старых браузеров */
+@supports not (height: 100svh) {
+  .tab { min-height: calc(100vh - var(--nav-h)); }
 }
 @supports not (overflow-x: clip) {
   .tab { overflow-x: hidden; }
@@ -419,7 +428,8 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
 .tag {
   display: inline-flex;
   align-items: center;
-  height: 38px;
+  height: auto;
+  min-height: 38px;
   padding: 0 1.1rem;
   border: 1px solid var(--ink);
   border-radius: 999px;
@@ -802,7 +812,7 @@ body.is-portfolio .tab-nav { border-bottom-color: rgba(0,0,0,0.12); }
 }
 
 @media (max-width: 640px) {
-  .slider__btn { width: 38px; height: 38px; }
+  .slider__btn { width: 40px; height: 40px; }
   .slider__btn--prev { left: 0.5rem; }
   .slider__btn--next { right: 0.5rem; }
 }
