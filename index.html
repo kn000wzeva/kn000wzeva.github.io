@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Портфолио и резюме сценариста">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <title>Портфолио · Резюме</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload самых критичных начертаний — браузер качает их до CSS,
+       чтобы убрать "прыжок" шрифта при первой отрисовке -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/unbounded/v8/Yq6F-LOTXCb04q32xlpat7U40fCyhW0lWglEDg.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/manrope/v19/xn7_YHE41ni1AdIRggexSg.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+        href="https://fonts.gstatic.com/s/cormorantgaramond/v19/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2">
+
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Анти-FOUT: прячем body, пока шрифты не готовы. Класс снимается
+       скриптом после document.fonts.ready или по safety-таймауту. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('fonts-loading');
+      var done = function () { root.classList.remove('fonts-loading'); };
+      if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+        document.fonts.ready.then(done);
+      }
+      // safety net: если шрифты по каким-то причинам не загружаются —
+      // всё равно показываем контент через 1.5 сек
+      setTimeout(done, 1500);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!--  НАВИГАЦИЯ (две вкладки — половина экрана)   -->
+  <!-- ============================================ -->
+  <nav class="tab-nav" aria-label="Основная навигация">
+    <button class="tab-btn" data-tab="resume" type="button" aria-label="Открыть вкладку резюме">
+      <span class="tab-btn__index">01</span>
+      <span class="tab-btn__name">Резюме</span>
+      <span class="tab-btn__en">Resume</span>
+    </button>
+    <button class="tab-btn" data-tab="portfolio" type="button" aria-label="Открыть вкладку портфолио">
+      <span class="tab-btn__index">02</span>
+      <span class="tab-btn__name">Портфолио</span>
+      <span class="tab-btn__en">Portfolio</span>
+    </button>
+  </nav>
+
+  <main class="main">
+
+    <!-- ================================ -->
+    <!--         ВКЛАДКА: РЕЗЮМЕ          -->
+    <!-- ================================ -->
+    <section class="tab tab--resume" id="tab-resume" aria-labelledby="resume-title">
+
+      <!-- HERO: Имя и тип работы -->
+      <header class="hero">
+        <!-- Декоративный «таргет» — кружок с точкой, как на референсах -->
+        <span class="deco deco--target" aria-hidden="true">
+          <svg viewBox="0 0 28 28" width="28" height="28">
+            <circle cx="14" cy="14" r="13" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="14" cy="14" r="3.5" fill="currentColor"/>
+          </svg>
+        </span>
+        <!-- Вертикальная подпись сбоку -->
+        <span class="deco deco--vertical" aria-hidden="true">·&nbsp;2026&nbsp;·</span>
+
+        <div class="hero__meta">
+          <span class="label">Резюме — 2026</span>
+          <span class="label">RU · EN</span>
+        </div>
+
+        <h1 class="hero__title" id="resume-title">
+          <span class="hero__line">Юлия</span>
+          <span class="hero__line">Князева</span>
+        </h1>
+
+        <div class="hero__role">
+          <span class="hero__role-text">режиссер</span>
+          <span class="asterisk" aria-hidden="true">✦</span>
+          <span class="hero__role-text">сценарист</span>
+          <span class="asterisk" aria-hidden="true">✦</span>
+          <span class="hero__role-text">креатор</span>
+        </div>
+
+        <div class="hero__footer">
+          <span class="label">Москва, Воронеж · Россия</span>
+          <span class="label">Open to work</span>
+        </div>
+      </header>
+
+      <!-- 01 · КОНТАКТЫ -->
+      <section class="section" id="contacts">
+        <div class="section__head">
+          <span class="section__num">01</span>
+          <h2 class="section__title">Контакты</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <ul class="contacts">
+            <li class="contacts__item">
+              <span class="contacts__label">Email</span>
+              <a class="contacts__value" href="mailto:kn000wzeva@gmail.com">kn000wzeva@gmail.com</a>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__label">Pinterest</span>
+              <a class="contacts__value" href="https://www.pinterest.com/kn000wzeva/">@kn000wzeva</a>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__label">Telegram</span>
+              <a class="contacts__value" href="https://t.me/yuli_knyz" target="_blank" rel="noopener">@yuli_knyz</a>
+            </li>
+            <li class="contacts__item">
+              <span class="contacts__label">Город</span>
+              <div class="contacts__value" target="_blank" rel="noopener">Москва, Воронеж</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 02 · ОБО МНЕ -->
+      <section class="section" id="about">
+        <div class="section__head">
+          <span class="section__num">02</span>
+          <h2 class="section__title">Обо&nbsp;мне</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <p class="prose prose--lead">
+            Режиссёр, сценарист, координатор мероприятий и креатор.
+            Специализируюсь на постановке театральных постановок, видеопродакшене и организации мероприятий - в том числе в сжатые сроки и с минимальными ресурсами. Пишу сценарии за ночь и уверенно провожу проект через любые форс-мажоры.
+          </p>
+          <p class="prose">
+            В работе опираюсь на широкую визуальную насмотренность и собственную базу референсов, опыт соединения неожиданных вселенных и жанров в цельные концепции, умение быстро находить нужных людей, локации и решения в нестандартных ситуациях, а также способность договариваться и удерживать рабочую атмосферу с командами любого состава.
+          </p>
+        </div>
+      </section>
+
+      <!-- 03 · НАВЫКИ -->
+      <section class="section" id="skills">
+        <div class="section__head">
+          <span class="section__num">03</span>
+          <h2 class="section__title">Навыки</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <ul class="tags">
+            <li class="tag tag--accent">Драматургия</li>
+            <li class="tag tag--accent">Работа в команде</li>
+            <li class="tag">Креативное мышление</li>
+            <li class="tag tag--accent">Сценография</li>
+            <li class="tag">Постановка задач</li>
+            <li class="tag">Стратегическое планирование</li>
+            <li class="tag tag--accent">Многозадачность</li>
+            <li class="tag">Стрессоустойчивость</li>
+            <li class="tag tag--accent">Концептуализация</li>
+            <li class="tag">Лидерство</li>
+            <li class="tag">Делегирование</li>
+            <li class="tag tag--accent">Адаптивность</li>
+            <li class="tag">Работа с камерой</li>
+            <li class="tag">Сторителлинг</li>
+            <li class="tag">Управление массовкой</li>
+            <li class="tag tag--accent">Сценарное мастерство</li>
+            <li class="tag tag--accent">Мизансценирование</li>
+            <li class="tag">Работа с актёрами</li>
+            <li class="tag">Раскадровка</li>
+            <li class="tag tag--accent">Художественная композиция</li>
+            <li class="tag">Монтажное мышление</li>
+            <li class="tag tag--accent">Темпоритм постановки</li>
+            <li class="tag">Копирайтинг</li>
+            <li class="tag">Кастинг</li>
+            <li class="tag tag--accent">Продакшн-менеджмент</li>
+            <li class="tag">Проектный менеджмент</li>
+            <li class="tag">Логистика мероприятий</li>
+            <li class="tag tag--accent">Кризис-менеджмент</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 04 · ОСОБЫЕ НАВЫКИ -->
+      <section class="section" id="special-skills">
+        <div class="section__head">
+          <span class="section__num">04</span>
+          <h2 class="section__title">Особые навыки</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <ul class="special-tags">
+            <li class="tag tag--accent">Работа с людьми и командой</li>
+
+            <li class="tag">Способность собрать и замотивировать даже самую разрозненную и незаинтересованную команду — включая студентов, чьи приоритеты лежат далеко за пределами рабочего процесса</li>
+            <li class="tag">Умение находить общий язык с кем угодно: договариваться, успокаивать, приводить в чувство и понимать человека в любом состоянии</li>
+            <li class="tag">Терпение объяснять одно и то же сотней разных способов, пока не дойдёт до каждого</li>
+            <li class="tag">Профессиональное предотвращение конфликтов на площадке до того, как они переросли в драку</li>
+            <li class="tag">Умение найти нужного человека буквально на улице</li>
+            <li class="tag">Нашла человека, который сделал мне этот сайт</li>
+
+            <li class="tag tag--accent">Режиссура и продакшн</li>
+
+            <li class="tag">Постановка концертов в сжатые сроки</li>
+            <li class="tag">Написание сценария за одну ночь</li>
+            <li class="tag">Организация и проведение тематических посвящений и мероприятий на 60–70 человек</li>
+            <li class="tag">Умение собрать достойный продукт из ничего и палок</li>
+
+            <li class="tag tag--accent">Креатив и насмотренность</li>
+
+            <li class="tag">Способность находить вдохновение и идеи где угодно и в чём угодно</li>
+            <li class="tag">Умение сочетать несочетаемое и превращать это в художественный приём</li>
+            <li class="tag">Глубокая насмотренность - Pinterest освоен на 120%</li>
+
+            <li class="tag tag--accent">Стрессоустойчивость и личные суперспособности</li>
+
+            <li class="tag">Хладнокровный выход из любых форс-мажоров и непредвиденных обстоятельств</li>
+            <li class="tag">Умение восстанавливаться за 15 минут сна</li>
+            <li class="tag">Стабильная работоспособность в режиме многозадачности и высокого давления</li>
+            <li class="tag">Способность плакать по команде</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 05 · ОПЫТ РАБОТЫ -->
+      <section class="section" id="experience">
+        <div class="section__head">
+          <span class="section__num">05</span>
+          <h2 class="section__title">Опыт работы</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <ol class="exp">
+            <li class="exp__item">
+              <div class="exp__period">
+                <span class="exp__years">2026</span>
+                <span class="exp__place">Проекты</span>
+              </div>
+              <div class="exp__content">
+                <h3 class="exp__role">Режиссер-сценарист</h3>
+                <p class="exp__desc">
+                  "Шинный ренессанс" - режиссёр, сценарист и организатор видеопроизводства<br>
+                  Провела короткометражный фильм о переработке и повторном использовании автомобильных покрышек через все этапы производства - сценарий, съёмочный процесс, постпродакшн.<br>
+                </p>
+              </div>
+            </li>
+
+            <li class="exp__item">
+              <div class="exp__period">
+                <span class="exp__years">2025 — 2026</span>
+                <span class="exp__place">Проекты</span>
+              </div>
+              <div class="exp__content">
+                <h3 class="exp__role">Режиссер-сценарист</h3>
+                <p class="exp__desc">
+                  Танцевальная студия 1DEEE.ENTERTAINMENT - креативный директор, преподаватель актёрского мастерства.<br>
+                  Руководила креативным направлением студии: разработка концепций проектов, постановка творческих задач команде. Режиссировала съемки клипов. Параллельно вела занятия по актёрскому мастерству для обучающихся.<br>
+                </p>
+              </div>
+            </li>
+
+            <li class="exp__item">
+              <div class="exp__period">
+                <span class="exp__years">2023 — 2024</span>
+                <span class="exp__place">Проекты</span>
+              </div>
+              <div class="exp__content">
+                <h3 class="exp__role">Режиссер-сценарист</h3>
+                <p class="exp__desc">
+                  "Новая Экосистема" - режиссёр, сценарист и организатор видеопроизводства<br>
+                  Сняла короткометражный фильм с оригинальной идеей на тему техники безопасности взяв на себя весь производственный цикл.<br>
+
+                </p>
+              </div>
+            </li>
+
+            <li class="exp__item">
+              <div class="exp__period">
+                <span class="exp__years">2023 — 2024</span>
+                <span class="exp__place">Проекты</span>
+              </div>
+              <div class="exp__content">
+                <h3 class="exp__role">Режиссер-сценарист</h3>
+                <p class="exp__desc">
+                  Экологическая компания "Собиратор" - режиссёр, сценарист и организатор видеопроизводства в проекте "Визуальная экокультура".<br>
+                  Участвовала в социальном проекте, направленном на популяризацию экологической культуры. Организовала и провела съёмки 15 просвещающих видеороликов под ключ: от разработки концепции и сценария до финального монтажа.<br>
+                  Отмечена благодарственным письмом Министерства природных ресурсов и экологии Воронежской области.<br>
+
+                </p>
+              </div>
+            </li>
+
+            <li class="exp__item">
+              <div class="exp__period">
+                <span class="exp__years">2021 — 2026</span>
+                <span class="exp__place">Воронежский государственный университет</span>
+              </div>
+              <div class="exp__content">
+                <h3 class="exp__role">Координатор студенческого актива</h3>
+                <p class="exp__desc">
+                  В творческом коллективе студенческого актива факультета 5 лет занимала пост координатора, а также сценариста, режиссёра и постановщика. Под руководством находилось от 30 до 70 человек.<br>
+                  Обязанности:<br>
+                  - Генерация идей и планов по их реализации<br>
+                  - Написание сценариев<br>
+                  - Координирование людей и написание операционных планов<br>
+                  - Организация и проведение театральных постановок, съемок коротких метров, клипов, монтаж<br>
+                  - Режиссура концертных номеров и сцен<br>
+                  - Поиск подрядчиков и инвесторов, бюджетирование, презентация продукта заказчику<br>
+                  - Организация и проведение мероприятий и активностей<br>
+                  Достижения:<br>
+                  - Поставила 10 авторских театральных постановок в рамках студенческих фестивалей на аудиторию 1000 человек.<br>
+                  - Подняла творческий студенческий коллектив с последних мест до высшей лиги<br>
+                  - Переформатировала ежегодные посвящения первокурсников из неструктурированных вечеринок в тематические иммерсивные мероприятия с элементами квеста<br>
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <span class="label">© 2026 — Все права защищены</span>
+        <span class="label">Made with care</span>
+      </footer>
+
+    </section>
+
+
+    <!-- ================================ -->
+    <!--        ВКЛАДКА: ПОРТФОЛИО        -->
+    <!-- ================================ -->
+    <section class="tab tab--portfolio" id="tab-portfolio" aria-labelledby="portfolio-title">
+
+      <header class="hero hero--dark">
+        <!-- Декоративные уголки вокруг title (как на референсе 3) -->
+        <span class="deco deco--corner deco--corner-tl" aria-hidden="true"></span>
+        <span class="deco deco--corner deco--corner-tr" aria-hidden="true"></span>
+        <span class="deco deco--corner deco--corner-bl" aria-hidden="true"></span>
+        <span class="deco deco--corner deco--corner-br" aria-hidden="true"></span>
+        <!-- Вертикальная подпись сбоку -->
+        <span class="deco deco--vertical deco--vertical-light" aria-hidden="true">·&nbsp;2026&nbsp;·</span>
+
+        <div class="hero__meta">
+          <span class="label">Портфолио — 2026</span>
+        </div>
+
+        <h1 class="hero__title" id="portfolio-title">
+          <span class="hero__line">Портфолио</span>
+        </h1>
+
+        <!-- Три ссылки-раздела. При клике — плавный скролл к соответствующей секции.
+             JS перехватывает клик и не даёт сменить вкладку через hashchange. -->
+        <nav class="hero__links" aria-label="Разделы портфолио">
+          <a class="hero__link" href="#clips"       data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>Клипы
+          </a>
+          <a class="hero__link" href="#short-films" data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>Короткометражки
+          </a>
+          <a class="hero__link" href="#theatre"     data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>Театральные постановки
+          </a>
+          <a class="hero__link" href="#reports"     data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>Репортажи
+          </a>
+          <a class="hero__link" href="#events"     data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>Мероприятия
+          </a>
+          <a class="hero__link" href="#snacks"     data-scroll>
+            <span class="hero__link-bullet" aria-hidden="true">✦</span>На закуску
+          </a>
+        </nav>
+      </header>
+
+      <!-- 01 · КЛИПЫ -->
+      <section class="section section--dark" id="clips">
+        <div class="section__head">
+          <span class="section__num">01</span>
+          <h2 class="section__title">Клипы</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <!--
+            ============== КАК ВСТАВИТЬ ВИДЕО ИЗ VK VIDEO ==============
+            В data-video-id пишется идентификатор видео в одном из двух форматов:
+
+            1) "OWNER_ID_VIDEO_ID" — то, что в ссылке стоит после /video.
+               Пример ссылки:  https://vkvideo.ru/video-12345678_456239017
+               data-video-id="-12345678_456239017"
+               (минус остаётся, если видео загружено в группу/сообщество).
+
+            2) Полная ссылка — JS сам распарсит:
+               data-video-id="https://vkvideo.ru/video-12345678_456239017"
+
+            Если у вас приватное видео, требующее хэш для встраивания,
+            добавьте к карточке атрибут data-video-hash="ХЭШ".
+            Подсмотреть хэш можно в коде встраивания на самой VK Video.
+            ============================================================
+          -->
+          <div class="video-grid">
+            <article class="video-card vk-video-card" data-video-id="387449150_456239889">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Потеряли бороду? Не беда · 2021</span>
+                <h3 class="video-title">ARISTOCRAT</h3>
+                <p class="video-desc">- · Юлия Князева</p>
+                <p class="video-about">
+                  ТЗ: снять клип на перепетую песню<br>
+                  Идея: взять персонажей из постановки и поместить их в другие реалии<br>
+                  Моя роль: креатор, сценарист, режиссёр, оператор<br>
+                  Реализация: времени у нас 1 день, мы снимали везде, на студии звукозаписи, в квартире в которой снимали короткометражку, взяли мелочь, отсняли уже половину, но тут, актёр снимает накладную бороду и усы, чтобы чуть от них отдохнуть… И усы… Пропадают… В середине съёмок… Времени конечно же нет, начинаем по всему Воронежу искать похожие усы, предварительно перевернув вверх дном всю квартиру, ничего не находим по всем законам подлости, я вспоминаю, что в гостях у знакомого я видела маску, звоню ему в 6 утра… В общем и целом привёз, досняли и аминь<br>
+                  Бюджет: минимальный (оккупированная квартира знакомого, мелочь забрали из Вологды у бабушки актёра, усы с бородой в театре по знакомству, съёмка на телефоны команды)<br>
+                  P.s. усы были на подошве ноги у девочки, которая спала, а чтобы сэкономить время на монтаже снимали на масочки в инсте)00)))<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="387449150_456239747">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Кто-то очень любит дабстеп… · 2020</span>
+                <h3 class="video-title">Метель</h3>
+                <p class="video-desc">ДДТ · Юлия Князева</p>
+                <p class="video-about">
+                  ТЗ: снять клип на перепетую песню ДДТ<br>
+                  Идея: за вечер снять клип в кофейне<br>
+                  Моя роль: креатор, сценарист, режиссёр, оператор<br>
+                  Реализация: пффф… ну тут спасибо огромное, что нас не выгнали из этой кофейни, потому что о сотрудничестве мы не договорились, актёры искались буквально с улицы и звонком со словами «срочно надо», благо раскадровка была готова заранее, и вот я весом 45 кг тащу на себе аппаратуру на 20 кг, мы снимаем и внутри до закрытия и снаружи после закрытия, в итоге всё получается<br>
+                  Бюджет: минимальный (оборудование от папы и заказ в кофейне)<br>
+                  P.s. идея китайского телефона пришла в конце монтажа)00)) мы мало спали…<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="387449150_456240758">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Перепеть Рому ВПР? В такие моменты надо говорить уверенно, да было · 2025</span>
+                <h3 class="video-title">Земля Санникова</h3>
+                <p class="video-desc">Рома ВПР · Юлия Князева</p>
+                <p class="video-about">
+                  ТЗ: сделать клип на перепетую песню и вплести внутрь историю постановки<br>
+                  Идея: пупупу, у нас же вроде много плёнки? О, а помнишь то красивое место?<br>
+                  Моя роль: креатор, сценарист, режиссёр, актер, певица<br>
+                  Реализация: было 2 студии и 1 «белый колодец», а так же минимальное количество времени на съёмки, ну само собой, мы едем в парк белый колодец не спав уже сутки на тот момент, но вариантов не было, потому что только в этот день нас согласились довезти (и не абы кто, а человек, который только получил права и его отец, низкий поклон ещё раз), естественно едем мы 3 часа только в одну сторону, приезжаем на место, там холодно несусветно, снимаем, возвращаемся обратно, берём в арену студию, снимаем там эти шикарные кадры благодаря запотевшей плёнке (потому что у одного из актёров была температура 39), время закончилось, а мы даже половину не отсняли от запланированного, продлить нельзя, само собой после нас люди, ищем другую студию и сразу туда, ну главное что всё доделали<br>
+                  Бюджет: минимальный (150 рублей за плёнку, оплата аренды и бензина)<br>
+                  P.s. в этой плёнке мы чуть все вместе не задохнулись, но оно точно стоило того<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="136931544_456239222">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Танец на машине-танец на машине · 2025</span>
+                <h3 class="video-title">-</h3>
+                <p class="video-desc">- · Юлия Князева</p>
+                <p class="video-about">
+                  ТЗ: сделать классный видос, который будет необычно показывать хореографа<br>
+                  Идея: пусть танцует на машине!<br>
+                  Моя роль: креатор, режиссёр<br>
+                  Реализация: придумать то придумали, а вот где найти разрисованную машину на которой можно будет танцевать-нет. Был обзвонен весь Воронеж и знакомые на машине. Естественно никто не может, либо не хочет разрисовывать свою машину( Ну, а идея есть идея, ради неё разбиться в лепёшку-дело бравое. Выхожу я на улицу после 4 часов обзвонов, смотрю по сторонам и вижу пк клубы, думаю мб это запасной план, подхожу к пк клубу, чтобы узнать по поводу съёмки и тут… Стоит малыха, разрисованная, не совсем так как я себе представляла, но всё же, искра буря безумие. Подхожу, думаю как бы найти владельца, замахиваюсь ногой, чтобы включить сигналку, а тут дверь открывается и на меня смотрят 2 абсолютно шокированных молодых человека. Крч как вы понимаете-мы договорились, (ребята оказались на столько заряженные, что предлагали её сжечь) но её ещё нужно было дорисовать. Я прошу знакомого, который рисует в нужном стиле разрисовать машину-соглашается. В день когда договорились разрисовывать-машину и водителя пакуют на сутки за рисунок на машине)00)) на следующий день мы её всё таки разрисовали… На следующий пошёл дождь… В общем и целом результат стоил того.<br>
+                  Бюджет: минимальный (на краску для машины х2)<br>
+                  P.s. машину кстати продали в день съёмок как арт-объект за 40к<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="136931544_456239224">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Договориться в 3 часа ночи с пк клубом для съёмки? Газ! · 2025</span>
+                <h3 class="video-title">-</h3>
+                <p class="video-desc">- · Юлия Князева</p>
+                <p class="video-about">
+                  ТЗ: необычно показать хореографа 2.0<br>
+                  Идея: нужно какое-то место с необычными рисунками или тип того<br>
+                  Моя роль: креатор, режиссёр<br>
+                  Реализация: время ночь, встретилась со знакомым, сидим болтаем о жизни, он рассказывает, что сейчас поедет играть в пк клуб с друзьями, я такая угу, он предлагает присоединиться, я соглашаюсь-приходим и я вижу, что стены то там разрисованы… Меня уже не остановить, я зову администратора, прошу главного, она подводит меня к спокойно отдыхающему парню, потягивающий кальян в своё свободное время, а тут я)00)) Драсте, снимать у вас хотим, да, да, понимаю, что 3 часа ночи, но оч надо ваше согласие. Вы в шоке? Понимаю, неожиданно, но соглашайтесь. Крч договорились, хотя и в видос не столько попали рисунки, по итогу<br>
+                  Бюджет: минимальный (оператору на лапу, гуашь для чёрных пальцев)<br>
+                  P.s. на этой съёмке оператор уронил камеру и у нас сломался объектив, плакали всем пк клубом, но досняли                </p><br>
+              </div>
+            </article>
+          </div>
+        </div>
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+      </section>
+
+      <!-- 02 · КОРОТКОМЕТРАЖКИ -->
+      <section class="section section--dark" id="short-films">
+        <div class="section__head">
+          <span class="section__num">02</span>
+          <h2 class="section__title">Короткометражки</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <div class="video-grid">
+            <article class="video-card vk-video-card" data-video-id="-217196825_456239045">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Ало экология? Да, да съёмки · 2023</span>
+                <h3 class="video-title">День сурка</h3>
+                <p class="video-desc">Немой комедийный этюд · 7 минут 48 секунд</p>
+                <p class="video-about">
+                  ТЗ: снять что-то что будет популяризировать экологию<br>
+                  Идея: сделать петлю времени, день сурка, но в мире экологиия<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: мы приехали на квартиру, поставили свет и заказали пиццу, ибо это и реквиз вообще-то тоже, начали снимать, обваляли актёра в мусоре, потом осознали, что на улице уже темно и дневной свет надо как-то родить, благо на квартире был балкон… Ну лучше чем поставить софтбокс на балкон придумано не было, потом возникла проблема с бутылкой и тем, как она будет лететь с учётом, что на балконе места ну +-0,5 с половиной, в общем и целом досняли и аминь<br>
+                  Бюджет: минимальный (аренда хаты и собрать мусор по съёмочной группе+зп)<br>
+                  Итог: 5 человек команды и одно из самых просматриваемых видео из проекта<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="-217196825_456239052">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Опять экология? · 2023</span>
+                <h3 class="video-title">PROМЫВКА</h3>
+                <p class="video-desc">Киноновелла · 6 минут 19 секунд</p>
+                <p class="video-about">
+                  ТЗ: сделать видео про вред моющих средств<br>
+                  Идея: показать обстоятельства, при которых человек будет вымывать всю хату<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: оккупировали хату уже по привычному сценарию, сходили за моющими средствами и тряпками, насорили, начали убираться, 30 раз смотрели момент «время уборки», снимали сидя в ванной и на туалете, вычистили всё что могли всё что не могли так что бартер получился выгодный, только актриса жаловалась, что всё время играет каких-то убощиц<br>
+                  Бюджет: минимальный (покупка тряпок и моющего+зп команде)<br>
+                  Итог: 6 человек команды и продолжение проекта с положительными отзывами<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card yt-video-card" data-video-id="LjbyCAAmrPs">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Снимаем на крыше? · 2021</span>
+                <h3 class="video-title">ДК Мечта</h3>
+                <p class="video-desc">Киноновелла · 36 минут 53 секунды</p>
+                <p class="video-about">
+                  ТЗ: снять деревенскую историю<br>
+                  Идея: построить историю вокруг деда и внука, а так же закрытия дк (ковидное время сразу видно)<br>
+                  Моя роль: креатор, сценарист, режиссёр, оператор, гримёр<br>
+                  Реализация: взяли хату знакомого и закрылись там на неделю, спали мало и там же, снимали, переклеивали усы и бороду миллион раз, ссорились с соседями и снимали дальше, снимали кстати на телефоны всех кто только попадался под руку, естественно переставили в квартире абсолютно всё, весь реквиз с домов и одежда тоже, съёмка «со скрытой» камеры это вообще отдельная история, я стою вжатая в угол, не дышу, за дверью 10 человек тоже не дышат и не говорят, песня, на крыше красили линолеум, там же и снимали, вытащили туда и пианино, ну собственно а почему бы и нет, снимали провожая актёра на поезд, за эти недельные съёмки я сумарно поспала часов 20<br>
+                  Бюджет: минимальный (линолеум с авито, аренда студии для номеров)<br>
+                  Итог: 3,5 тысячи просмотров и неделя отсыпного<br>
+                </p>
+              </div>
+            </article>
+            <article class="video-card yt-video-card" data-video-id="zVkR2pAwYho">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Отель согласился, чтобы мы в нём снимали день? Оккупируем! · 2022</span>
+                <h3 class="video-title">Кроссы</h3>
+                <p class="video-desc">Киноновелла · 45 минут 56 секунд</p>
+                <p class="video-about">
+                  ТЗ: снять<br>
+                  Идея: сделать историю девки и пацана в лучших традициях российского кинематографа<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: естественно мы доставили неудобства всему отелю, клоунада это не просто номер, это олицетворение всего съёмочного процесса, на парковке мы провели почти всю ночь, пока остальные участники доводили до истерики друг друга, подметали ли мы парковку? Да, уверенное было, но не сильно помогло, мусорка сделана из пенопласта кстати говоря, а пуфики вытащили из номера, спали 20 человек в одном номере, слова забывались конечно с завидной регулярностью (искренне рекомендую посмотреть и закадровую версию тоже), снять клип одним кадром с первого дубля, потому что певица опоздала на 50 минут это отдельная тема, людям было на столько нас жаль, что предложили еды, а вечно голодным студентам нет смысла отказываться<br>
+                  Бюджет: минимальный (аренда студий для номеров, аренда отеля и букетик оранжевых роз)<br>
+                  Итог: 3,2 тысячи просмотров и пару дней втыкания в одну точку<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="-217196825_456239076">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Ох уж эта экология… · 2025</span>
+                <h3 class="video-title">Забытые жертвы</h3>
+                <p class="video-desc">Киноновелла · 9 минут 26 секунд</p>
+                <p class="video-about">
+                  ТЗ: сделать ролик про технику безопасности на предприятиях<br>
+                  Идея: сделать видео, которое заставит задуматься, ещё и 9 мая…<br>
+                  Моя роль: креатор, сценарист, режиссёр, оператор<br>
+                  Реализация: уже привычное «хата знакомого», завесили одну комнату плёнкой, чуть не упала из окна пока снимали на кухне, ибо мало места было, актёр дверью снёс ноготь на ноге, когда написывали озвучку чуть не умерли со смеху, потому что второй актёр очень смешно смеётся, а у него была температура, потому смеялся он со всего, потом поехали в гаражи, оккупировали там гараж не знакомых на тот момент ребят, там же погладили енотов (сама была в шоке)<br>
+                  Бюджет: минимальный (150 рублей плёнка+зп)<br>
+                  Итог: 7 человек команды и сколько-то просмотров<br>
+                </p>
+              </div>
+            </article>
+            <article class="video-card vk-video-card" data-video-id="-222040717_456239029">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">Ну у меня ж экологическое образование… · 2026</span>
+                <h3 class="video-title">Шинный рениссанс</h3>
+                <p class="video-desc">Немой комедийный этюд · Хронометраж</p>
+                <p class="video-about">
+                  Хронометраж: 5 минут 39 секунд<br>
+                  ТЗ: снять ролик про переработку покрышек<br>
+                  Идея: жизнь сдвгшника<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: я вытащила половину своего дома и привезла на квартиру знакомого из команды, мы всё переставили в квартире (он кстати потом всё так и оставил), приехала актриса максимально попадающая в роль, сняли половину, разошлись отдыхать, но как мы все знаем, это очень опасное действие, крч досняли мы только через несколько дней и то в попыхах<br>
+                  Бюджет: минимальный (5к на реквизит, который потом разобрали по домам+зп)<br>
+                  Итог: 6 человек команды, дебют актрисы и 100 просмотров<br>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 03 · ТЕАТРАЛЬНЫЕ ПОСТАНОВКИ -->
+      <section class="section section--dark" id="theatre">
+        <div class="section__head">
+          <span class="section__num">03</span>
+          <h2 class="section__title">Театральные постановки</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <div class="accordion">
+            <!--
+              ↓ КАК ДОБАВЛЯТЬ / МЕНЯТЬ ФОТО:
+              Фотографии перечисляются через запятую в атрибуте data-photos
+              на элементе .slider__track. Порядок = порядок слайдов.
+              Количество слайдов, точки и счётчик 01/N генерируются JS автоматически —
+              вручную их менять не нужно.
+
+              Чтобы подставить свои фото, просто замените URL'ы с picsum.photos
+              на свои. Формат URL любой (можно класть рядом файл и писать
+              "images/photo-01.jpg" — относительный путь от index.html).
+            -->
+
+            <!-- Постановка 3 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">01</span>
+                <span class="accordion-head__title">Рабочее место</span>
+                <span class="accordion-head__meta">2025</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    Очень нравится «Следствие ведут колобки»? Берём!<br>
+                    Жанр: Водевиль<br>
+                    ТЗ: сделать театральную постановку в позитивных эмоциях и с приколами<br>
+                    Идея: взять «Следствие ведут колобки» и поместить их в другой сюжет: маленькая конторка-тур агентство, которое отправляет в путешествия по своему<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик<br>
+                    Реализация: сценарий написан, работа с актёрами, которые никогда до этого момента не играли. Сложностей и без этого хватает, но ко всему прочему у нас ещё и бюджет 2 крысы. Поплакали, покакали и снова за работу. Нужны костюмы… Взяли из моего шкафа… Реквизит и декор? Бумага. Но за то какая история получилась…<br>
+                    Бюджет: средне минимальный (бумага, реквизит, столы-70к)<br>
+                    Итог: 3к просмотров и ожидание полной версии репортажа уже на протяжении полу года<br>
+                    P.s. или как говорится в колобках, которые я за время подготовки проекта посмотрела 1000 раз, какой был слон, какой был слон…<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                        ./photos/1_25/23.jpg,
+                        ./photos/1_25/1.jpg,
+                        ./photos/1_25/3.jpg,
+                        ./photos/1_25/4.jpg,
+                        ./photos/1_25/5.jpg,
+                        ./photos/1_25/6.jpg,
+                        ./photos/1_25/7.jpg,
+                        ./photos/1_25/9.jpg,
+                        ./photos/1_25/11.jpg,
+                        ./photos/1_25/12.jpg,
+                        ./photos/1_25/13.jpg,
+                        ./photos/1_25/14.jpg,
+                        ./photos/1_25/15.jpg,
+                        ./photos/1_25/16.jpg,
+                        ./photos/1_25/17.jpg,
+                        ./photos/1_25/18.jpg,
+                        ./photos/1_25/20.jpg,
+                        ./photos/1_25/21.jpg,
+                        ./photos/1_25/22.jpg,
+                        ./photos/1_25/23.jpg,
+                        ./photos/1_25/24.jpg
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Постановка 3 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">02</span>
+                <span class="accordion-head__title">На поверхности</span>
+                <span class="accordion-head__meta">2025</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    А про Чернобыль уже делали, да?<br>
+                    Жанр: Трагедия<br>
+                    ТЗ: сделать постановку с большим количеством актёров<br>
+                    Идея: соединить историю Чернобыля и мультик «Психонавты»: история людей, которые оказались заперты на острове после катастрофы<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик, актёр<br>
+                    Реализация: перфоманс со смысловой нагрузкой из 2-х разных песен вплетённых друг в друга и реализуемый среди 14 актёров, театрально-танцевальная постановка с самой катастрофой, рассказывающая как разные семьи столкнулись с ней, травмы показанные с помощью золотой ленты для неуместности, очень тонко показанная гибель людей, сцена состоящая из «я понял», «я понимаю», танец со смертью и дайте танк «альтернатива» на закуску<br>
+                    Бюджет: средне минимальный (декор, аренда, репзалы-150к)<br>
+                    Итог: 5к просмотров, выступление на нескольких площадках и множество ссор после и во время<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                        ./photos/2_25/20.jpg,
+                        ./photos/2_25/2.jpg,
+                        ./photos/2_25/3.jpg,
+                        ./photos/2_25/4.jpg,
+                        ./photos/2_25/5.jpg,
+                        ./photos/2_25/6.jpg,
+                        ./photos/2_25/7.jpg,
+                        ./photos/2_25/8.jpg,
+                        ./photos/2_25/10.jpg,
+                        ./photos/2_25/11.jpg,
+                        ./photos/2_25/12.jpg,
+                        ./photos/2_25/13.jpg,
+                        ./photos/2_25/14.jpg,
+                        ./photos/2_25/15.jpg,
+                        ./photos/2_25/16.jpg,
+                        ./photos/2_25/17.jpg,
+                        ./photos/2_25/18.jpg,
+                        ./photos/2_25/19.jpg,
+                        ./photos/2_25/20.jpg,
+                        ./photos/2_25/21.jpg,
+                        ./photos/2_25/23.jpg
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Постановка 3 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">03</span>
+                <span class="accordion-head__title">Постоянство времени</span>
+                <span class="accordion-head__meta">2024</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    У вас экзистенциальный кризис? Уже думали о концепции времени, пространства, боли, хаоса через людей<br>
+                    Жанр: Мистерия<br>
+                    ТЗ: сделать театральную постановку на 8 человек<br>
+                    Идея: а что если, такие явления как боль, правда, смерть, хаос, были бы людьми и работали бы не по «профессии»<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик, актёр<br>
+                    Реализация: не очевидные шутки про летучую мышь, лебединое озеро, забрали часы у знакомого, чтобы надеть их на ногу, слова выучили за 2 дня до выступления, лучшие премии Дарвина, оговорки по Фрейду, отсылки к «Гена возьми», песни дайте так как стихи, миллион книг с рук всех знакомых и остальные прекраснейшие происшествия<br>
+                    Бюджет: средне минимальный (декор, аренда, костюмы-100к)<br>
+                    Итог: 4,4к просмотров и 3 пневмонии у одного человека<br>
+                    P.s. а вы знали, что есть чемпионат по выманиванию дождевых червей? Я вот тоже нет, но когда узнала, сразу после слёз от смеха, включила в сценарий<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                        ./photos/2_24/6.jpg,
+                        ./photos/2_24/1.jpg,
+                        ./photos/2_24/2.jpg,
+                        ./photos/2_24/3.jpg,
+                        ./photos/2_24/4.jpg,
+                        ./photos/2_24/5.jpg,
+                        ./photos/2_24/6.jpg,
+                        ./photos/2_24/7.jpg,
+                        ./photos/2_24/8.jpg,
+                        ./photos/2_24/9.jpg,
+                        ./photos/2_24/10.jpg,
+                        ./photos/2_24/11.jpg,
+                        ./photos/2_24/12.jpg,
+                        ./photos/2_24/13.jpg,
+                        ./photos/2_24/14.jpg,
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Постановка 3 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">04</span>
+                <span class="accordion-head__title">Вердикт</span>
+                <span class="accordion-head__meta">2024</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    Есть любимая песня - есть театральная постановка<br>
+                    Жанр: Мистерия<br>
+                    ТЗ: сделать постановку с 6 актёрами<br>
+                    Идея: сделать постановку из песни Мачете «ОРАКУЛ»: суд над человечеством<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик<br>
+                    Реализация: ну как вам сказать… я прошла Афганскую войну… начали подготовку, сшили костюмы, неделю спорили как актёр будет висеть, нам чуть не отменили постановку, ибо подумали, что там отсылка на Иисуса, подобрала фоновую, записала гзк, грим лица был вообще у всех, сделали кафедры, переделали кафедры, ночь снимали музклип без выученных слов, перерисовывали усы и бороду миллион раз, у актёра оторвалась рука после, ибо зеркало/маска весила 7кг, а он её держал 40 минут, не запланированный «адвокат» от звукоря, умение играть пьяного очень вовремя раскрылось у актёра, выход лжи заворожил вообще всех, а научить девочек дёргаться как в фильмах ужасов было той ещё задачей, учили сжимать кулаки, вовремя вставать и садиться, крч было весело, а художественное слово очень нравится до сих пор<br>
+                    Бюджет: средне минимальный (маски, реквизит, декорации-100к)<br>
+                    Итог: 7,5к просмотров и самый успешный кейс<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                      ./photos/1_24/30.jpg,
+                      ./photos/1_24/3.jpg,
+                      ./photos/1_24/5.jpg,
+                      ./photos/1_24/9.jpg,
+                      ./photos/1_24/11.jpg,
+                      ./photos/1_24/12.jpg,
+                      ./photos/1_24/13.jpg,
+                      ./photos/1_24/14.jpg,
+                      ./photos/1_24/15.jpg,
+                      ./photos/1_24/16.jpg,
+                      ./photos/1_24/17.jpg,
+                      ./photos/1_24/18.jpg,
+                      ./photos/1_24/19.jpg,
+                      ./photos/1_24/20.jpg,
+                      ./photos/1_24/21.jpg,
+                      ./photos/1_24/22.jpg,
+                      ./photos/1_24/23.jpg,
+                      ./photos/1_24/24.jpg,
+                      ./photos/1_24/25.jpg,
+                      ./photos/1_24/26.jpg,
+                      ./photos/1_24/28.jpg,
+                      ./photos/1_24/32.jpg,
+                      ./photos/1_24/33.jpg
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <!-- Постановка 1 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">05</span>
+                <span class="accordion-head__title">Кому этот вопрос?</span>
+                <span class="accordion-head__meta">2023</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    9 вариантов сценария мафии…<br>
+                    Жанр: Мелодрама<br>
+                    ТЗ: сделать театральную постановку по мафии<br>
+                    Идея: а что если, мафиози будут играть в игру «психоз»… история парня, который вступает в наследство, на которое претендует и местная мафия<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик, актёр<br>
+                    Реализация: спящий охранник с самого начала, шутки про бабулю, персонаж с говорящим именем Криси, хомяк как отдельный вид искусства, пока я прописывала переходы персонажей по игре в психоз, сама чуть его не заработала, декор переделывался за неделю до постановки, декоратор пожертвовал пальцем во время показа, сценарий переписывался 9 раз, а главное, что история закончилась хорошо<br>
+                    Бюджет: средне минимальный (ну 3 стены это не мало-70к)<br>
+                    Итог: 3,9к просмотров и все поиграли в психоз<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                      ./photos/2_23/7.jpg,
+                      ./photos/2_23/1.jpg,
+                      ./photos/2_23/2.jpg,
+                      ./photos/2_23/3.jpg,
+                      ./photos/2_23/4.jpg,
+                      ./photos/2_23/5.jpg,
+                      ./photos/2_23/6.jpg,
+                      ./photos/2_23/7.jpg,
+                      ./photos/2_23/8.jpg,
+                      ./photos/2_23/9.jpg,
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Постановка 2 -->
+            <article class="accordion-item">
+              <button class="accordion-head" type="button" aria-expanded="false">
+                <span class="accordion-head__idx">06</span>
+                <span class="accordion-head__title">Что могли - то сделали</span>
+                <span class="accordion-head__meta">2023</span>
+                <span class="accordion-head__icon" aria-hidden="true"></span>
+              </button>
+              <div class="accordion-body">
+                <div class="accordion-inner">
+                  <p class="prose prose--light">
+                    Сделать сценарий из положения фестиваля? Сюда!<br>
+                    Жанр: Трагикомедия<br>
+                    ТЗ: сделать театральную постановку<br>
+                    Идея: сделать историю о том, что было бы, если бы творчество вымерло и половина сценария будет состоять из положения фестиваля<br>
+                    Моя роль: креатор, сценарист, режиссёр, постановщик<br>
+                    Реализация: Салуки для номеров, конферансье, «маленький» дайте танк как художественное слово, минус 0,5 с половиной света, злодей в лучших традициях русского кинематографа, отсутствие декора кроме 2-х стульев, танец в чб на сцене, ляпы со словами и прям в петличку «дальше», бесконечные уговоры актёров играть и ходить на репетиции<br>
+                    Бюджет: средне минимальный (реквиз, свет, звук, петли-60к)<br>
+                    Итог: 12к просмотров и парочка седых волос<br>
+                  </p>
+                  <div class="slider" data-slider>
+                    <div class="slider__viewport">
+                      <div class="slider__track" data-slider-track data-photos="
+                      ./photos/1_23/12.jpg,
+                      ./photos/1_23/1.jpg,
+                      ./photos/1_23/2.jpg,
+                      ./photos/1_23/3.jpg,
+                      ./photos/1_23/5.jpg,
+                      ./photos/1_23/6.jpg,
+                      ./photos/1_23/7.jpg,
+                      ./photos/1_23/9.jpg,
+                      ./photos/1_23/10.jpg,
+                      ./photos/1_23/11.jpg,
+                      ./photos/1_23/12.jpg,
+                      ./photos/1_23/13.jpg,
+                      ./photos/1_23/14.jpg,
+                      ./photos/1_23/15.jpg,
+                      ./photos/1_23/16.jpg,
+                      ./photos/1_23/17.jpg,
+                      ./photos/1_23/19.jpg,
+                      ./photos/1_23/20.jpg
+                      "></div>
+                    </div>
+                    <button class="slider__btn slider__btn--prev" type="button" aria-label="Предыдущее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+                    </button>
+                    <button class="slider__btn slider__btn--next" type="button" aria-label="Следующее фото">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+                    </button>
+                    <div class="slider__dots" data-slider-dots></div>
+                    <span class="slider__counter" data-slider-counter></span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 04 · РЕПОРТАЖИ -->
+      <section class="section section--dark" id="reports">
+        <div class="section__head">
+          <span class="section__num">04</span>
+          <h2 class="section__title">РЕПОРТАЖИ</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <div class="video-grid">
+            <article class="video-card vk-video-card" data-video-id="-222040717_456239027">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">2025</span>
+                <h3 class="video-title">Как снять материала на 2 часа, а смонтировать на 5 минут?</h3>
+                <p class="video-desc">Репортаж · 5 минут 19 секунд</p>
+                <p class="video-about">
+                  ТЗ: снять репортаж к театральной постановке<br>
+                  Идея: взять реальных упырей и перемешать со следствием ведут колобки<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: квартира знакомой, перетащили шкаф вместе с линолеумом, заставили актёра лизнуть камень, отфотошопили фотки, распечатали, сделали рыбок, одели актёров в наши вещи, чуть не умерли от импровизации, а пение ноздёй это самый мощный мой режиссёрский приём, пока репетировали и снимали-научились смеяться в себя<br>
+                  Бюджет: минимальный (печать фото и реквиз)<br>
+                  Итог: около 1000 просмотров<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="387449150_456240497">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">2024</span>
+                <h3 class="video-title">Сейчас будет полное хи-хи ха-ха</h3>
+                <p class="video-desc">Репортаж · 4 минуты 35 секунд</p>
+                <p class="video-about">
+                  ТЗ: снять репортаж к театральной постановки<br>
+                  Идея: сделать а-ля интервью персонажей<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: стащили шубу с мимо проходящей девочки (добровольно и потом вернули), как и очки для зрения у администратора студии, позадовали экзистенциальные вопросы и не только, послушали дабстеп и всё досняли<br>
+                  Бюджет: минимальный (галстук с пингвинчиками и аренда студии)<br>
+                  Итог: около 600 просмотров<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="387449150_456240058">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <span class="label">2022</span>
+                <h3 class="video-title">За кадром</h3>
+                <p class="video-desc">Репортаж · 6 минуты 56 секунд</p>
+                <p class="video-about">
+                  ТЗ: снять репортаж к театральной постановке<br>
+                  Идея: сделать историю девки и пацана в лучших традициях российского кинематографа<br>
+                  Моя роль: креатор, сценарист, режиссёр<br>
+                  Реализация: естественно мы доставили неудобства всему отелю, клоунада это не просто номер, это олицетворение всего съёмочного процесса, на парковке мы провели почти всю ночь, пока остальные участники доводили до истерики друг друга, подметали ли мы парковку? Да, уверенное было, но не сильно помогло, мусорка сделана из пенопласта кстати говоря, а пуфики вытащили из номера, спали 20 человек в одном номере, слова забывались конечно с завидной регулярностью (искренне рекомендую посмотреть и закадровую версию тоже), снять клип одним кадром с первого дубля, потому что певица опоздала на 50 минут это отдельная тема, людям было на столько нас жаль, что предложили еды, а вечно голодным студентам нет смысла отказываться<br>
+                  Бюджет: минимальный (аренда студий для номеров, аренда отеля и букетик оранжевых роз)<br>
+                  Итог: 3,2 тысячи просмотров и пару дней втыкания в одну точку<br>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 05 · МЕРОПРИЯТИЯ -->
+      <section class="section section--dark" id="events">
+        <div class="section__head">
+          <span class="section__num">05</span>
+          <h2 class="section__title">Мероприятия</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <div class="video-grid">
+            <article class="video-card vk-video-card" data-video-id="387449150_456239835">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Нравится сталкер? Отлично, снимаем в лесу в полной темноте! · 2021</h3>
+                <p class="video-about">
+                  ТЗ: сделать мероприятие на 50 человек<br>
+                  Идея: обязательно с уклоном в сталкер<br>
+                  Моя роль: креатор, сценарист, режиссёр, координатор мероприятия<br>
+                  Реализация: сняли пригласительный видос в полной темноте в лесу, пригласили ребят, сделали костюмы и декор, провели мероприятие<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="dQw4w9WgXcQ">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Что? Простоквашино в хоррор версии? · 2023</h3>
+                <p class="video-about">
+                  ТЗ: сделать мероприятие на 70 человек<br>
+                  Идея: Простоквашино в хоррор версии вдохновившись постом из редита<br>
+                  Моя роль: креатор, сценарист, режиссёр, координатор мероприятия<br>
+                  Реализация: чуть-чуть сходим с ума и погружаемся в психиатрические диагнозы и симптомы, делаем пригласительный видос, придумываем шифры, станции, костюмы, реквизит и декорации, а так же поведение для каждого водящего, проводим мероприятие и приходим в себя<br>
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="387449150_456240748">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Соединить реальных упырей и сумерки? Как 2 пальца об асфальт · 2024</h3>
+                <p class="video-about">
+                  ТЗ: сделать мероприятие на 60 человек, которое всем понравится, с конкурсами, шарадами<br>
+                  Идея: соединить вселенную реальных упырей и сумерек<br>
+                  Моя роль: креатор, сценарист, режиссёр, координатор мероприятия<br>
+                  Реализация: сделали пригласительный видос, прописали станции и квесты для мероприятия в стиле реальных упырей и сумерек, а так же все были в костюмах и некоторые с акцентом кубика в кубе, провели мероприятие<br>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 06 · МЕРОПРИЯТИЯ -->
+      <section class="section section--dark" id="snacks">
+        <div class="section__head">
+          <span class="section__num">06</span>
+          <h2 class="section__title">На закуску</h2>
+          <span class="section__rule" aria-hidden="true"></span>
+        </div>
+        <div class="section__body">
+          <div class="video-grid">
+            <article class="video-card vk-video-card" data-video-id="136931544_456239223">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Зеркало · 2025</h3>
+                <p class="video-about">
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="136931544_456239220">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Помада · 2025</h3>
+                <p class="video-about">
+                </p>
+              </div>
+            </article>
+
+            <article class="video-card vk-video-card" data-video-id="136931544_456239219">
+              <div class="video-frame"></div>
+              <div class="video-info">
+                <h3 class="video-title">Капюшон · 2025</h3>
+                <p class="video-about">
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <a class="back-to-top" href="#tab-portfolio" data-scroll aria-label="К выбору разделов">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            <span>К&nbsp;выбору&nbsp;разделов</span>
+          </a>
+        </div>
+      </section>
+
+      <footer class="foot foot--dark">
+        <span class="label">© 2026 — Все права защищены</span>
+        <span class="label">Made with care</span>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
